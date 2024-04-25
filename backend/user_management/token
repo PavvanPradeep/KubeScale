@@ -1,0 +1,13 @@
+{
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImV4YW1wbGVAZXhhbXBsZS5jb20ifQ.a2QOnaV0UI40qw834Iod5l1Q40vYic-7MSkwra7Yrow",
+    "user": {
+        "email": "example@example.com",
+        "password": "helloworld123"
+    }
+}
+
+{
+    "email": "example@example.com",
+    "password": "helloworld123"
+}
+

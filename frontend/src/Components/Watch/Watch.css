@@ -1,0 +1,157 @@
+
+  
+  /* Apply the font to a specific class or element */
+  /* .font-aliquam {
+    font-family: 'Aliquam';
+    font-size: 30px;
+  } */
+
+
+
+.watch-container {
+    position: relative;
+    margin: 0 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 80vh;
+  }
+  
+/* Add a media query to switch to column layout on screens smaller than 768px (typical mobile width) */
+@media (max-width: 767px) {
+  .watch-container {
+      flex-direction: column;
+  }
+
+  .image {
+      order: -1; /* Move the image to the top in column layout */
+      max-width: 100%;
+  }
+
+  .description {
+      max-width: 100%;
+      padding: 20px;
+  }
+
+  .image img {
+      width: 100%;
+      height: auto;
+      max-height: 300px; /* Adjust the height as needed for the aspect ratio on larger screens */
+  }
+}
+
+@media (max-width: 767px) {
+  .more-description {
+      padding: 2rem !important; /* Adjust padding for smaller screens */
+      margin: 0 !important; /* Remove left and right margin for smaller screens */
+      text-align: center !important; /* Center the text */
+  }
+}
+
+  .image,
+  .description {
+    color: black;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+    padding: 20px;
+}
+
+.description h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.description p {
+    font-size: 1.125rem;
+    margin-bottom: 20px;
+}
+
+.description button {
+    background-color: #6d8094;
+    color: #ffffff;
+    font-size: 1.125rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.description button:hover {
+    background-color: #0056b3;
+}
+  
+
+.assurance{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px; /* Increased margin for spacing */
+}
+.assurance p:first-child{
+    margin-right: 50px; /* Increased margin for spacing */
+}
+
+.more-description{
+    padding: 5rem;
+    margin: 0 8em;
+
+}
+
+/* Additional styles for buttons, icons, etc. */
+.btn {
+    border: 1px solid black;
+    border-radius: 25px;
+    height: 50px;
+    width: 250px;
+}
+
+.desc-header{
+    color: black;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.desc-contents{
+    color: black;
+    font-size: 1.125rem;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.added-to-cart-card {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    /* Add more styles for the card */
+  }
+  
+  .blur {
+    filter: blur(5px);
+  }
+  

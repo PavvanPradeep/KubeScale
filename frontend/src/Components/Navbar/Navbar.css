@@ -1,0 +1,333 @@
+/* Styling for the sidebar */
+.sidenav {
+  height: 100%;
+  width: 0;       /* Closed on loading */
+  position: fixed;   /* Never changes position */
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  opacity: 1;
+}
+
+.sidenav .nav-icon-container {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+}
+
+.collections-s{
+  cursor: pointer;
+}
+
+.login-s{
+  cursor: pointer;
+}
+
+.cart-s{
+  cursor: pointer;
+
+}
+
+.links {
+  padding-top: 100px; /* Adjust this value to increase or decrease spacing */
+}
+
+.links a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 30px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* Appearance of Sidenav when opened */
+.sidenav.open {
+  width: 500px;
+  opacity: 0.8;
+  /* backdrop-filter: blur(4px) saturate(150%);  
+  background-color: rgba(0,0,0,0.5); */
+}
+
+.sidebar-section1{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.sidebar-section1:after{
+  content: "";
+  display: flex;  
+  justify-content: center;
+  position: absolute;
+  background: white;
+  width: 450px;
+  top: 50%;
+  left: 1.25rem;
+  transform: translateY(-50%);
+}
+
+.sidebar-section2{
+  display: flex;
+  margin-top: 50px;
+  margin-left: 22px;
+  flex-wrap: wrap;
+  position: relative;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.sidebar-section2 > .test-element-container {
+  position: absolute;
+  width: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Adjust as needed */
+  gap: 1.25rem;
+}
+
+.sidebar-section2.fade-out{
+  opacity: 0;
+  pointer-events: none;  /* Display pointer events when it fades out */
+}
+
+.sidebar-section2 > div{
+  position: absolute;
+  width: 100px;
+  margin: 0.625rem;
+  text-align: center;
+}
+
+/* Styling for sidebar links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+position: absolute;
+top: 0;
+right: 460px;
+font-size: 36px;
+opacity: 1;
+transition: opacity 1s; 
+pointer-events: none;
+}
+
+.sidenav.open .closebtn {
+opacity: 1;
+pointer-events: auto;
+}
+/* End of Sidenav */
+
+/* Navbar */
+.navbar-container {
+  position: absolute; 
+  z-index: 1; 
+  width: 100%; 
+}
+.nav-top {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 1.25rem;
+}
+
+.nav-left,
+.nav-center,
+.nav-right {
+  /* position: relative; */
+  display: flex;
+  align-items: center;
+}
+
+.nav-center {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+/* hiding search and collections on screen width reduction */
+/* @media only screen and (max-width: 62.5em) {
+  .search {
+    display: none;
+  }
+
+  .search-logo {
+    display: block; 
+  }
+} */
+
+@media only screen and (max-width: 62.5em) {
+  .collections {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 62.5em) {
+  .menu {
+    display: none;
+  }
+}
+
+.custom-icon {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 0 1.25rem; 
+}
+
+.nav-text {
+  color: #ffffff;
+
+  font-size: 1.25rem;  /* use em */
+  display: flex;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  transition: opacity 0.5s;
+  opacity: 1;
+  margin: 3.125rem 2rem; 
+}
+.menu-text {
+  color: #ffffff;
+  font-size: 1.25rem;  /* use em */
+  display: flex;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  transition: opacity 0.5s;
+  opacity: 1;
+  margin: 3.125rem 4rem; 
+}
+
+.nav-text:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.125rem;
+  transform: scaleX(0);
+  bottom: 0;
+  right: 0.063rem;
+
+  background-color: var(--after-bg-color,#000000);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-text:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.menu-text:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.125rem;
+  transform: scaleX(0);
+  bottom: 0;
+  right: 0.063rem;
+
+  background-color: var(--after-bg-color,#000000);  /* var is being used for psuedo-elements */
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.menu-text:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.nav-text.fade-in {
+  transition: 3s;
+  opacity: 1; 
+}
+
+.nav-text.fade-out {
+  opacity: 0; 
+}
+
+
+
+/* Nav icon */ 
+#nav-icon {
+  left: 1.25rem;
+width: 3.75rem;
+height: 3.125rem;
+position: fixed;
+margin: 2.4rem auto;
+cursor: pointer;
+}
+
+#nav-icon span {
+display: block;
+position: absolute;
+height: 0.313rem;
+width: 75%;
+background: #ffffff;
+opacity: 1;
+left: 0;
+transition: .25s ease-in-out;
+}
+
+#nav-icon span:nth-child(1) {
+top: 0px;
+}
+
+#nav-icon span:nth-child(2) {
+top: 18px;
+}
+
+#nav-icon:hover span:nth-child(1) {
+  top: -4.5px;
+}
+  
+#nav-icon:hover span:nth-child(2) {
+  top: 31.5px;
+}
+  
+
+#nav-icon.open span:nth-child(1) {
+top: 18px;
+transform: rotate(45deg);
+}
+
+#nav-icon.open span:nth-child(2) {
+transform: rotate(-45deg);
+top: 18px;
+}
+
+/* .nav-icon-container:hover #nav-icon span:nth-child(1){
+  top: 9px;
+}
+.nav-icon-container:hover #nav-icon span:nth-child(2) {
+  top: 27px; 
+}
+
+.custom-icon:hover #nav-icon span:nth-child(1){
+  top: 9px;
+}
+.custom-icon:hover #nav-icon span:nth-child(2) {
+  top: 27px;
+} */
+
+
+/* .blur-effect {
+  filter: blur(5px);
+} */
